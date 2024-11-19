@@ -3,45 +3,44 @@ public class StringLoops
     // default constructor; no instance variables
     public StringLoops() { }
 
-    /* Returns the number of times "character" appears in "searchString"
+    public int countCharacters(String character, String searchString){
+    int count = 0;
 
-       This should be case sensitive!
+    for (int i = 0; i < searchString.length(); i++) {
 
-       Examples:
-       - if character = "a" and searchString = "Apples and bananas",
-         this method returns 4 (it finds BOTH "A" and "a")
-       - if character = "A" and searchString = "Apples and bananas",
-         this method returns 1 (it finds BOTH "A" and "a")
-       - if character = "!" and searchString = "Hello! Nice day!",
-         this method returns 2
-      */
-    public int countCharacters(String character, String searchString)
-    {
-        /* if you finished this in the last lesson, start with “reverseString2” */
-        /* if you did not, complete this now! */
+        if(searchString.substring(i, i + 1).equals(character)){
+
+
+       count++; }
+
+
+
+
+
     }
+        return count;
+}
 
 
-    public String reverseString(String origString)
-    {
-        String print = origString;
+    public String reverseString(String origString) {
         String newStr = "";
-        for(int i = 0; i < print.length(); i++)
-        {
-            String letter = (print.substring(print.length() - i -1, print.length() - i));
 
-            System.out.println(letter);
+        for (int i = 0; i < origString.length(); i++) {
+            newStr += origString.substring(origString.length() - i - 1, origString.length() - i);
+        }
+
+        System.out.println(newStr);
+
+        return newStr;
     }
 
-// --- FIVE NEW METHODS TO ADD & IMPLEMENT ARE BELOW ---
+    // Reverse a string (Method 2)
+    public String reverseString2(String origString) {
+        String reversed = "";
 
-    /* Returns the original string reversed -- SECOND IMPLEMENTATION
+        for (int i = origString.length() - 1; i >= 0; i--) {
+            reversed += origString.charAt(i);
+        }
 
-     Examples:
-     - if origString = "hello!" this method returns "!olleh"
-     - if origString = "Apples and bananas" this method returns "sananab dna selppA"
-    */
-    public String reverseString2(String origString)
-    {
-
-    }
+        return reversed;
+    }}
